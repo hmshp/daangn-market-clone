@@ -10,20 +10,20 @@ export default function App() {
     
     if(ShowForm) {
       return (
-        <div> 
-          <label for="title">제목:</label>
+        <div>
+          <label htmlFor="title">제목:</label>
           <input type="text" id="title"></input>
     
-          <label for="photo-link">사진 링크:</label>
+          <label htmlFor="photo-link">사진 링크:</label>
           <input type="text" id="photo-link"></input>
     
-          <label for="category">카테고리:</label>
+          <label htmlFor="category">카테고리:</label>
           <input type="text" id="category"></input>
     
-          <label for="price">가격:</label>
+          <label htmlFor="price">가격:</label>
           <input type="number" id="price"></input>
     
-          <label for="content">글 내용:</label>
+          <label htmlFor="content">글 내용:</label>
           <input type="text" id="content"></input>
           <button onClick={handleClick}>홈으로 돌아가기</button>
         </div>
