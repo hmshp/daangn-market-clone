@@ -14,7 +14,7 @@ export default function App() {
             width={140}
             height={140}
           />
-          <ul>
+          <ul> 
             <li>{product.price}</li>
             <li>{product.category}</li>
             <li>{product.detail}</li>
