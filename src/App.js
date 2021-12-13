@@ -10,7 +10,7 @@ export default function App() {
     
     if(ShowForm) {
       return (
-        <div>
+        <div> 
           <label for="title">제목:</label>
           <input type="text" id="title"></input>
     
