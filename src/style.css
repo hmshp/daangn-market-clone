@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.title {
+  font-family: 'Gaegu', cursive;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 50px;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.products-container {
+  display: flex;
+  margin-bottom: 20px;
+  background-color: beige;
+  border-radius: 8px;
+  font-size: 1.2rem;
+}
+
+.product-image {
+  width: 220px;
+  margin-right: 14px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.product-lists {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 20px;
+}
+
+.change-data-buttons {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.change-data-buttons > button {
+  font-size: 30px;
+  font-family: 'Gaegu', cursive;
+  border: none;
+  background-color: orange;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.add-item {
+  margin-right: 20px;
+}
