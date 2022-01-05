@@ -8,12 +8,21 @@ import Card from "./Card"
 import Header from "./Header"
 
 export default function App() {
+const productLists = products.map(product => {
+  return (
+    <Card
+      key={product.id}
+      card={product}
+    />
+  )
+  
+})
   return (
       <div className="home-container">
         <Header />
-        <div className="product-lists">
-          <Card />
-        </div>
+        <section className="product-lists">
+          {productLists}
+        </section>
       </div>
   );
 

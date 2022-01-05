@@ -1,18 +1,14 @@
 import React from "react"
-import { products } from "./data"
 
-export default function Card() {
-  const productLists = products.map(product => {
+export default function Card(props) {
     return (
-      <div key={product.id} className="products-container">
-        <img className="product-image" src={product.imageUrl} />
+      <div key={props.card.id} className="products-container">
+        <img className="product-image" src={props.card.imageUrl} />
         <div className="product-description">
-          <h2>{product.name}</h2>
-          <p>{product.category}</p>
-          <h4>{product.price}</h4>
+          <h2>{props.card.name}</h2>
+          <p>{props.card.category}</p>
+          <h4>{props.card.price}</h4>
         </div>
       </div>
     )
-  })
-  return productLists
 }
