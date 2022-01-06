@@ -1,29 +1,19 @@
-import { useState } from 'react';
+import { useState } from "react";
 import React from "react";
-import Home from "./Home";
 import Form from "./Form";
 import { products } from "./data";
-import "./style.css"
-import Card from "./Card"
-import Header from "./Header"
+import "./style.css";
+import Card from "./Card";
+import Header from "./Header";
 
 export default function App() {
-const productLists = products.map(product => {
+  const productLists = products.map((product) => {
+    return <Card key={product.id} card={product} />;
+  });
   return (
-    <Card
-      key={product.id}
-      card={product}
-    />
-  )
-  
-})
-  return (
-      <div className="home-container">
-        <Header />
-        <section className="product-lists">
-          {productLists}
-        </section>
-      </div>
+    <div className="home-container">
+      <Header />
+      <section className="product-lists">{productLists}</section>
+    </div>
   );
-
 }
