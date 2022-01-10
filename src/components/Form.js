@@ -15,22 +15,22 @@ export default function Form() {
   }
   return (
     <div>
-      <h2>상품 추가</h2>
+      <h2 className="form-title">상품 추가</h2>
       <form onSubmit={onSubmit}>
-          <label htmlFor="title">제목:</label>
-          <input onChange={onChange} defaultValue={productInfo.title} type="text" id="title"></input>
+          <label>제목: <input onChange={onChange} defaultValue={productInfo.title} type="text" id="title" /></label>
+          
 
-          <label htmlFor="photo-link">사진 링크:</label>
-          <input onChange={onChange} defaultValue={productInfo.photoLink} type="text" id="photo-link"></input>
+          <label>사진 링크:<input onChange={onChange} defaultValue={productInfo.photoLink} type="text" id="photo-link" /></label>
+          
 
-          <label htmlFor="category">카테고리:</label>
-          <input onChange={onChange} defaultValue={productInfo.category} type="text" id="category"></input>
+          <label>카테고리:<input onChange={onChange} defaultValue={productInfo.category} type="text" id="category" /></label>
+          
 
-          <label htmlFor="price">가격:</label>
-          <input onChange={onChange} defaultValue={productInfo.price} type="number" id="price"></input>
+          <label>가격:<input onChange={onChange} defaultValue={productInfo.price} type="number" id="price" /></label>
+          
 
-          <label htmlFor="content">글 내용:</label>
-          <input onChange={onChange} defaultValue={productInfo.content} type="text" id="content"></input>
+          <label>글 내용:<input onChange={onChange} defaultValue={productInfo.content} type="text" id="content" /></label>
+          
           <button>상품 추가</button>
       </form>
     </div>
