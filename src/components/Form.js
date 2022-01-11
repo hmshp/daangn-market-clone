@@ -14,24 +14,37 @@ export default function Form() {
     event.preventDefault();
   }
   return (
-    <div>
-      <h2 className="form-title">상품 추가</h2>
-      <form onSubmit={onSubmit}>
-          <label>제목: <input onChange={onChange} defaultValue={productInfo.title} type="text" id="title" /></label>
-          
+    <div className="form-container">
+      <form className="form" onSubmit={onSubmit}>
+      <h2 className="form-global-title">상품 추가</h2>
+          <div className="form-inputs-container">
+            <div className="form-input-wrapper">
+              <label htmlFor='title'>제목: </label>
+              <input onChange={onChange} defaultValue={productInfo.title} type="text" id="title" />
+            </div>
+            
+            <div className="form-input-wrapper">
+              <label htmlFor='photo-link'>사진 링크:</label>
+              <input onChange={onChange} defaultValue={productInfo.photoLink} type="text" id="photo-link" />
+            </div>
 
-          <label>사진 링크:<input onChange={onChange} defaultValue={productInfo.photoLink} type="text" id="photo-link" /></label>
-          
+            <div className="form-input-wrapper">
+              <label htmlFor='category'>카테고리:</label>
+              <input onChange={onChange} defaultValue={productInfo.category} type="text" id="category" />
+            </div>
 
-          <label>카테고리:<input onChange={onChange} defaultValue={productInfo.category} type="text" id="category" /></label>
-          
+            <div className="form-input-wrapper">
+              <label htmlFor='price'>가격:</label>
+              <input onChange={onChange} defaultValue={productInfo.price} type="number" id="price" />
+            </div>
 
-          <label>가격:<input onChange={onChange} defaultValue={productInfo.price} type="number" id="price" /></label>
-          
+            <div className="form-input-wrapper">
+              <label htmlFor='content'>글 내용:</label>
+              <input onChange={onChange} defaultValue={productInfo.content} type="text" id="content" />
+            </div>
 
-          <label>글 내용:<input onChange={onChange} defaultValue={productInfo.content} type="text" id="content" /></label>
-          
-          <button>상품 추가</button>
+            <button className="form-add-button">상품 추가</button>
+          </div>      
       </form>
     </div>
   );
