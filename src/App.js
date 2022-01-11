@@ -29,13 +29,13 @@ toggleShown 실행했으면
 */
 
   const productLists = products.map((product) => {
-    return <Card key={product.id} card={product} />;
+    return <Card key={product.id} card={product} />
   });
   return (
     <div className="home-container">
       <Header isShown={isShown} handleClick={toggleShown}/>
-      <section className="product-lists">
-        {isShown ? <Form /> : productLists}
+      <section className="main-page">
+        {isShown ? <Form /> : <section className="product-lists">{productLists}</section>}
       </section>
     </div>
   );
