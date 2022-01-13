@@ -29,6 +29,19 @@ export default function App() {
     });
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    products.push({
+      ...formData,
+      id: formData.title,
+      name: formData.title,
+      price: formData.price,
+      category: formData.category,
+      detail: formData.content,
+      imageUrl: formData.photoLink
+    })
+  }
+
   function toggleShown() {
     // console.log(isShown)
     setIsShown(prevIsShown => !prevIsShown)
@@ -41,7 +54,7 @@ export default function App() {
     <div className="home-container">
       <Header isShown={isShown} handleClick={toggleShown}/>
       <section className="main-page">
-        {isShown ? <Form formData={formData} handleChange={handleChange} /> : <section className="product-lists">{productLists}</section>}
+        {isShown ? <Form formData={formData} handleChange={handleChange} handleSubmit={handleSubmit} /> : <section className="product-lists">{productLists}</section>}
       </section>
     </div>
   );
