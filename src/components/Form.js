@@ -67,9 +67,8 @@ export default function Form() {
           </div>
           <div className="form-input-wrapper">
             <label htmlFor="content">글 내용:</label>
-            <input
+            <textarea
               onChange={handleChange}
-              type="text"
               name="content"
               id="content"
               value={formData.content}
