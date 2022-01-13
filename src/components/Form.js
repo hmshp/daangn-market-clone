@@ -3,12 +3,13 @@ import { useState } from "react";
 
 export default function Form(props) {
 
+
   //1. state를 App으로 옮기고
   //2. Form에서 state를 바꾸고 submit하면 state object를 data.js 안의 products에 push하도록 하자. 근데 state를 어떻게 data.js에 전달하지? data.js도 컴포넌트인가?
 
   return (
     <div className="form-container">
-      <form className="form">
+      <form onSubmit={props.handleSubmit} className="form">
         <h2 className="form-global-title">상품 추가</h2>
         <div className="form-inputs-container">
           <div className="form-input-wrapper">
