@@ -30,6 +30,7 @@ export default function Form() {
             <input
               onChange={handleChange}
               type="text"
+              name="title"
               id="title"
               value={formData.title}
             />
@@ -39,6 +40,7 @@ export default function Form() {
             <input
               onChange={handleChange}
               type="text"
+              name="photoLink"
               id="photo-link"
               value={formData.photoLink}
             />
@@ -48,6 +50,7 @@ export default function Form() {
             <input
               onChange={handleChange}
               type="text"
+              name="category"
               id="category"
               value={formData.category}
             />
@@ -57,6 +60,7 @@ export default function Form() {
             <input
               onChange={handleChange}
               type="number"
+              name="price"
               id="price"
               value={formData.price}
             />
@@ -66,6 +70,7 @@ export default function Form() {
             <input
               onChange={handleChange}
               type="text"
+              name="content"
               id="content"
               value={formData.content}
             />
