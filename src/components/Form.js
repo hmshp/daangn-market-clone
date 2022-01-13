@@ -1,24 +1,10 @@
 import React from "react";
 import { useState } from "react";
 
-export default function Form() {
-  const [formData, setFormData] = useState({
-    title: "",
-    photoLink: "",
-    category: "",
-    price: 0,
-    content: "",
-  });
+export default function Form(props) {
 
-  function handleChange(event) {
-    // console.log(event);
-    setFormData((prevFormData) => {
-      return {
-        ...prevFormData,
-        [event.target.name]: event.target.value,
-      };
-    });
-  }
+  //1. state를 App으로 옮기고
+  //2. Form에서 state를 바꾸고 submit하면 state object를 data.js 안의 products에 push하도록 하자. 근데 state를 어떻게 data.js에 전달하지? data.js도 컴포넌트인가?
 
   return (
     <div className="form-container">
@@ -28,50 +14,50 @@ export default function Form() {
           <div className="form-input-wrapper">
             <label htmlFor="title">제목: </label>
             <input
-              onChange={handleChange}
+              onChange={props.handleChange}
               type="text"
               name="title"
               id="title"
-              value={formData.title}
+              value={props.formData.title}
             />
           </div>
           <div className="form-input-wrapper">
             <label htmlFor="photo-link">사진 링크:</label>
             <input
-              onChange={handleChange}
+              onChange={props.handleChange}
               type="text"
               name="photoLink"
               id="photo-link"
-              value={formData.photoLink}
+              value={props.formData.photoLink}
             />
           </div>
           <div className="form-input-wrapper">
             <label htmlFor="category">카테고리:</label>
             <input
-              onChange={handleChange}
+              onChange={props.handleChange}
               type="text"
               name="category"
               id="category"
-              value={formData.category}
+              value={props.formData.category}
             />
           </div>
           <div className="form-input-wrapper">
             <label htmlFor="price">가격:</label>
             <input
-              onChange={handleChange}
+              onChange={props.handleChange}
               type="number"
               name="price"
               id="price"
-              value={formData.price}
+              value={props.formData.price}
             />
           </div>
           <div className="form-input-wrapper">
             <label htmlFor="content">글 내용:</label>
             <textarea
-              onChange={handleChange}
+              onChange={props.handleChange}
               name="content"
               id="content"
-              value={formData.content}
+              value={props.formData.content}
             />
           </div>
           <button className="form-add-button">상품 추가</button>
