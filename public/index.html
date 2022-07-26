@@ -43,5 +43,23 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.4/firebase-app.js";
+      import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.6.4/firebase-database.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyAkoKVwedqdPHCpKhxDKMKvuSnuvX892IY",
+        authDomain: "hongdangmu-market.firebaseapp.com",
+        projectId: "hongdangmu-market",
+        storageBucket: "hongdangmu-market.appspot.com",
+        messagingSenderId: "786997549160",
+        appId: "1:786997549160:web:e0581e23364f9c971643dd",
+        measurementId: "G-KS96HL82FL"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase();
+    </script>
   </body>
 </html>
