@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="boardInsert(3,'제목3','박찬호','내용3')">쓰기</button>
+  <button onclick="boardList()">글 목록</button>
+  <input type="text" id="b_no" size="6" placeholder="번호 입력">
+  <button onclick="boardDetail(document.querySelector('#b_no').value)">글 상세보기</button>
+  <button onclick="boardDelete(document.querySelector('#b_no').value)">삭제</button>
+  <div id="d_list" style="background-color: blanchedalmond;"></div>
+  <div id="d_detail" style="background-color: aquamarine;"></div>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.4/firebase-app.js";
+    import { getDatabase, set, ref, onValue, remove } from "https://www.gstatic.com/firebasejs/9.6.4/firebase-database.js";
+  
+    const firebaseConfig = {
+      apiKey: "AIzaSyDSxutU0HRr8EeetsO_VKJmZUI1NpfpBPA",
+      authDomain: "react2022-kh-5db2d.firebaseapp.com",
+      databaseURL: "https://react2022-kh-5db2d-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "react2022-kh-5db2d",
+      storageBucket: "react2022-kh-5db2d.appspot.com",
+      messagingSenderId: "973265122545",
+      appId: "1:973265122545:web:c983eb7b02d60b85132550",
+      measurementId: "G-EYQ225MGGN"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    console.log('app: '+ app);
+    const db = getDatabase();
+    console.log('db: ' + db)
+
+    window.boardInsert =  function boardInsert(b_no, b_title, b_writer, b_content) {
+      set(ref(db, 'reactkh/' + b_no), {
+        b_no: b_no,
+        b_title: b_title,
+        b_writer: b_writer,
+        b_content: b_content,
+      });
+    }
+
+    window.boardList = function boardList() {
+      const starCountRef = ref(db, 'reactkh');
+      onValue(starCountRef, (snapshot) => {
+        const data = snapshot.val();
+        // console.log(data[1].b_content);
+        console.log(JSON.stringify(data));
+        d_list.textContent = JSON.stringify(data);
+        // console.log('data: ' + data);
+      });
+    }
+
+    window.boardDetail = function boardDetail(b_no) {
+      const starCountRef = ref(db, 'reactkh/' + b_no);
+      onValue(starCountRef, (snapshot) => {
+        const data = snapshot.val();
+        // console.log(data[1].b_content);
+        console.log(JSON.stringify(data));
+        d_detail.textContent = JSON.stringify(data);
+        // console.log('data: ' + data);
+      });
+    }
+
+    window.boardDelete = function boardDelete(b_no) {
+      remove(ref(db, 'reactkh/' + b_no));
+      
+    }
+  </script>
+</body>
+</html>
