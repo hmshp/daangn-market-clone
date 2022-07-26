@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/daangn-market-clone/static/css/main.2601160e.css",
-    "main.js": "/daangn-market-clone/static/js/main.00728348.js",
-    "index.html": "/daangn-market-clone/index.html",
-    "main.2601160e.css.map": "/daangn-market-clone/static/css/main.2601160e.css.map",
-    "main.00728348.js.map": "/daangn-market-clone/static/js/main.00728348.js.map"
+    "main.css": "/static/css/main.2601160e.css",
+    "main.js": "/static/js/main.00728348.js",
+    "index.html": "/index.html",
+    "main.2601160e.css.map": "/static/css/main.2601160e.css.map",
+    "main.00728348.js.map": "/static/js/main.00728348.js.map"
   },
   "entrypoints": [
     "static/css/main.2601160e.css",
