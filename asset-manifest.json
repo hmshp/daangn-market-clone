@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/daangn-market-clone/static/css/main.2601160e.css",
-    "main.js": "/daangn-market-clone/static/js/main.47bdb372.js",
+    "main.js": "/daangn-market-clone/static/js/main.6aef7d7a.js",
     "index.html": "/daangn-market-clone/index.html",
     "main.2601160e.css.map": "/daangn-market-clone/static/css/main.2601160e.css.map",
-    "main.47bdb372.js.map": "/daangn-market-clone/static/js/main.47bdb372.js.map"
+    "main.6aef7d7a.js.map": "/daangn-market-clone/static/js/main.6aef7d7a.js.map"
   },
   "entrypoints": [
     "static/css/main.2601160e.css",
-    "static/js/main.47bdb372.js"
+    "static/js/main.6aef7d7a.js"
   ]
 }
