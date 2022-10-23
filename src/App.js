@@ -4,77 +4,29 @@ import { products } from "./data";
 import "./style.css";
 import Card from "./components/Card";
 import Header from "./components/Header";
-import Form from "./components/Form"
-import Detail from "./components/Detail"
+import Form from "./components/Form";
 
+import { Provider, useSelector, useDispatch, connect } from "react-redux";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+  Link,
+} from "react-router-dom";
+import MainPage from "./pages/MainPage";
 
 export default function App() {
-  //useState만들기
-  const [isShown, setIsShown] = useState(false)
-  //버튼 클릭 안한 상태면 false(상품 목록 보이는 상태), 클릭 한 상태면 true
-
-  const [formData, setFormData] = useState({
-    title: "",
-    photoLink: "",
-    category: "",
-    price: 0,
-    content: "",
-  });
-
-  const [editMode, setEditMode] = useState(false)
-
-  // const editProduct = products.filter(product => product.id === )
-
-  // const [detailData, setDetailData] = useState(
-    
-  // )
-
-  function handleChange(event) {
-    // console.log(event);
-    setFormData((prevFormData) => {
-      return {
-        ...prevFormData,
-        [event.target.name]: event.target.value,
-      };
-    });
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    products.push({
-      ...formData,
-      id: formData.title,
-      name: formData.title,
-      price: formData.price,
-      category: formData.category,
-      detail: formData.content,
-      imageUrl: formData.photoLink
-    })
-  }
-
-  function handleEdit(event) {
-    setEditMode(prevEditMode => !prevEditMode)
-  } 
-
-
-  function toggleShown() {
-    // console.log(isShown)
-    setIsShown(prevIsShown => !prevIsShown)
-  }
-
-  const productLists = products.map((product) => {
-    return <Card key={product.id} card={product} handleEdit={handleEdit}/>
-  });
   return (
-    <div className="home-container">
-      <Header isShown={isShown} handleClick={toggleShown}/>
-      <section className="main-page">
-        {editMode? <h2>Edit Mode</h2> : 
-        isShown ?
-        <Form formData={formData} handleChange={handleChange} handleSubmit={handleSubmit} /> : <section className="product-lists">{productLists}</section>}
-      </section>
-    </div>
+    <Router>
+      <div className="home-container">
+        <Header />
+        <Routes>
+          <Route index element={<MainPage />} />
+          <Route path="/product/new" element={<Form />} />
+          <Route exact path="/products" element={<Navigate to="/" />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
-
-

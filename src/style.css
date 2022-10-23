@@ -55,7 +55,7 @@ h1, h2 {
   margin-bottom: 20px;
 }
 
-.change-data-buttons > button {
+.change-data-buttons button {
   font-size: 15px;
   font-weight: 600;
   font-family: 'Nanum Gothic';
