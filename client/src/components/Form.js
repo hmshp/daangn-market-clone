@@ -9,7 +9,7 @@ export default function Form() {
     price: 0,
     category: "",
     detail: "",
-    imageUrl: "",
+    url: "",
   });
 
   console.log(formData);
@@ -53,9 +53,9 @@ export default function Form() {
             <input
               onChange={handleChange}
               type="text"
-              name="imageUrl"
+              name="url"
               id="photo-link"
-              value={formData.imageUrl}
+              value={formData.url}
             />
           </div>
           <div className="form-input-wrapper">

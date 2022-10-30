@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export default function Detail(props) {
   return (
@@ -25,7 +25,7 @@ export default function Detail(props) {
               type="text"
               name="image-url"
               id="image-url"
-              value={props.detailData.imageUrl}
+              value={props.detailData.url}
             />
           </div>
           <div className="form-input-wrapper">
