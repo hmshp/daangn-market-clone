@@ -33,21 +33,21 @@ export async function createProduct(req, res) {
   res.status(201).json(product);
 }
 
-// patch로 해야 할지 put으로 해야 할지 몰라서(제목, 내용, 가격, 카테고리 등 몇 개를 수정할지 모르니까) UPDATE는 우선 보류
-
-// export async function updateProduct(req, res) {
-//   const id = req.params.id;
-//   const text = req.body.text;
-//   const tweet = await productRepository.update(id, text);
-//   if (tweet) {
-//     res.status(200).json(tweet);
-//   } else {
-//     res.status(404).json({ message: `Tweet id(${id}) not found` });
-//   }
-// }
+// 몇 개 항목을 수정할지 모르는데, 몇 개 든 다 잘 수정되게 하려면 어떻게 해야 할지???
+// 우선 제목, 가격, 카테고리만 수정한다는 시나리오고 API 작성했다.
+export async function updateProduct(req, res) {
+  const { id } = req.params;
+  const { title, price, category } = req.body;
+  const product = await productRepository.update(id, title, price, category);
+  if (product) {
+    res.status(200).json(product);
+  } else {
+    res.status(404).json({ message: `Product id(${id}) not found` });
+  }
+}
 
 export async function deleteProduct(req, res) {
   const id = req.params.id;
   await productRepository.remove(id);
-  res.status(204).json({ message: `tweet id ${id} successfully deleted` });
+  res.status(204).json({ message: `Product id ${id} successfully deleted` });
 }

@@ -61,13 +61,15 @@ export async function create(product) {
   return product;
 }
 
-// export async function update(id, text) {
-//   const tweet = tweets.find((tweet) => tweet.id === id);
-//   if (tweet) {
-//     tweet.text = text;
-//   }
-//   return tweet;
-// }
+export async function update(id, title, price, category) {
+  const product = products.find((product) => product.id === id);
+  if (product) {
+    product.title = title;
+    product.price = price;
+    product.category = category;
+  }
+  return product;
+}
 
 export async function remove(id) {
   products = products.filter((product) => product.id !== id);
